@@ -2,7 +2,7 @@ services:
   web:
     build:
       context: ${CONTEXTO}
-      dockerfile: ./dockerfiles/ubbase 
+      dockerfile: ./dockerfiles/ubbase/dockerfile
     container_name: ${CONTAINER_NAME}
     image: diego/ubbase
     ports:

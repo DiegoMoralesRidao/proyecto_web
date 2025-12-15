@@ -9,7 +9,7 @@ configurar_ssh() {
 
   mkdir -p /run/sshd
   mkdir /home/${USUARIO}/.ssh
-  cat /root/admin/base/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys
+  cat /root/admin/ubbase/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys
     #/etc/init.d/ssh start
   # Reinicar el servicio SSH para que se aplique las configuraciones
   service ssh restart

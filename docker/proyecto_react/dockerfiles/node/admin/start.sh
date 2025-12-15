@@ -7,7 +7,7 @@ load_entrypoint_nginx(){
 }
 
 workdir(){
-    cd /root/admin/node/proyectos/proyecto_web
+    cd /root/admin/node/proyecto/pproyecto
 }
 
 dependencias(){

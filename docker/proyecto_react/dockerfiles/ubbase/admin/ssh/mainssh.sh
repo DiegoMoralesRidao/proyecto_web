@@ -6,17 +6,13 @@ configurar_ssh() {
   sed -i 's/#PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
   # Cambiar el puerto de SSH
   sed -i 's/#Port.*/Port '$PORT_SSH'/' /etc/ssh/sshd_config
- # Esto borra las líneas que contienen "AllowUsers" o "PermitRootLogin"
-# del archivo incorrecto (ssh_config)
-sudo sed -i '/AllowUsers/d' /etc/ssh/ssh_config
-sudo sed -i '/PermitRootLogin/d' /etc/ssh/ssh_config
 
   mkdir -p /run/sshd
   mkdir /home/${USUARIO}/.ssh
   cat /root/admin/ubbase/common/id_rsa.pub >> /home/${USUARIO}/.ssh/authorized_keys
     #/etc/init.d/ssh start
   # Reinicar el servicio SSH para que se aplique las configuraciones
-  service ssh restart
+  #service ssh restart
   #exec /usr/sbin/sshd -D & # dejar el ssh en background PARA CUANDO LO IMPLEMENTOS EN UN SERVICIO
   exec /usr/sbin/sshd -D &
 }

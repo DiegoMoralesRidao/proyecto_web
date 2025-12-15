@@ -2,7 +2,7 @@ services:
   web:
     build:
       context: ${CONTEXTO}
-      dockerfile: ./dockerfiles/nginx/nginx
+      dockerfile: ./dockerfiles/nginx/dockerfile
     container_name: ${NOMBRE}
     ports:
       - "80:80"     

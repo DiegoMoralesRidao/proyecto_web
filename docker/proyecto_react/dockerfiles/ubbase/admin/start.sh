@@ -13,12 +13,8 @@ main(){
     touch /root/logs/informe.log
     newUser
     resuser=$?
-    if [ "$resuser" -eq 0 ]; then
-        configurar_sudo
-    fi
-    if [ "$resuser" -eq 0 ]; then
-        configurar_ssh
-    fi
+    configurar_sudo
+    configurar_ssh
 
     # Encargada de mantener el contenedor en ejecución de Background
     tail -f /dev/null   

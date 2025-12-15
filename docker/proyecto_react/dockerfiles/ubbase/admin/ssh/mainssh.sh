@@ -6,10 +6,10 @@ configurar_ssh() {
   sed -i 's/#PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
   # Cambiar el puerto de SSH
   sed -i 's/#Port.*/Port '$PORT_SSH'/' /etc/ssh/sshd_config
-
-  sed -i 's/#PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/ssh_config
-  # Cambiar el puerto de SSH
-  sed -i 's/#Port.*/Port '$PORT_SSH'/' /etc/ssh/ssh_config
+ # Esto borra las líneas que contienen "AllowUsers" o "PermitRootLogin"
+# del archivo incorrecto (ssh_config)
+sudo sed -i '/AllowUsers/d' /etc/ssh/ssh_config
+sudo sed -i '/PermitRootLogin/d' /etc/ssh/ssh_config
 
   mkdir -p /run/sshd
   mkdir /home/${USUARIO}/.ssh

@@ -1,0 +1,36 @@
+/* src/index.css */
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* Reseteamos colores por defecto */
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #000000; /* Fondo negro base como Spotify */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* IMPORTANTE: Esto quita los márgenes y hace que ocupe todo el ancho */
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  width: 100%; /* Forzamos ancho completo */
+  display: block; /* A veces viene como flex por defecto, esto lo arregla */
+}
+
+/* Aseguramos que el div donde React monta la app también ocupe todo */
+#root {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: left; /* Quitamos el centrado de texto forzado */
+}

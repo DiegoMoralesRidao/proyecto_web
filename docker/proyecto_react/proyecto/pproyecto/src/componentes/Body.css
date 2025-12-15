@@ -1,0 +1,155 @@
+/* --- 1. SECCIÓN HERO (La chica) --- */
+.download-hero {
+  /* Ajuste y selección de la imagen principal del body */
+  background-image: url(/src/assets/banner.jpg); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 580px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* Filtro oscuro para que se lea el texto sobre la foto */
+.download-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+}
+
+.download-content {
+  position: relative;
+  z-index: 2; /* Para que el texto esté encima del filtro oscuro */
+  max-width: 600px;
+  padding: 20px;
+}
+
+.download-content h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.download-content p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+/* Botón estilo Microsoft Store */
+.btn-microsoft-big {
+  background-color: #333; 
+  border: 1px solid #999;
+  border-radius: 8px;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0 auto 20px; 
+  cursor: pointer;
+  color: white;
+  transition: transform 0.2s;
+}
+
+.btn-microsoft-big:hover {
+  transform: scale(1.02);
+  background-color: #444;
+}
+
+.btn-microsoft-big svg {
+  width: 30px;
+  height: 30px;
+  /* Esto asegura que el icono no se aplaste */
+  min-width: 30px; 
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.btn-text span { font-size: 12px; }
+.btn-text strong { font-size: 18px; }
+
+.direct-download-link {
+  color: #ccc;
+  font-size: 0.9rem;
+  text-decoration: underline;
+}
+
+/* --- 2. SECCIÓN TIENDAS --- */
+.store-links-section {
+  background-color: white;
+  color: black;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.store-links-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.store-badges {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.store-badges img {
+  height: 40px; /* Tamaño de los botones de tienda */
+  cursor: pointer;
+}
+
+/* --- 3. SECCIÓN DISPOSITIVOS (Cerezas) --- */
+.devices-section {
+  background-color: #2941ab; 
+  /* Seleccion de la imagen de las cerezas */
+  background-image: url('../assets/platform_cherries.jpg');
+  
+  /* Propiedades para la correcta implementación de la imagen */
+  background-size: cover;     
+  background-position: center; 
+  background-repeat: no-repeat; /* No se repite tipo mosaico */
+  
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* LISTA DE DISPOSITIVOS CLICABLE */
+.device-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  position: relative;
+  z-index: 10;
+}
+
+.device-list li a {
+  color: rgba(255, 255, 255, 0.7); /* Blanco un poco transparente */
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: color 0.3s, transform 0.3s;
+  display: inline-block;
+}
+
+/* Efecto Hover */
+.device-list li a:hover {
+  color: #1db954; /* Verde Spotify al pasar el ratón */
+  transform: scale(1.1); /* Se hace un pelín más grande */
+}

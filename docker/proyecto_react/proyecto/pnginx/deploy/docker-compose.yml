@@ -1,0 +1,23 @@
+services:
+  web:
+    build:
+      context: ${CONTEXTO}
+      dockerfile: ./dockerfiles/nginx/nginx
+    container_name: ${NOMBRE}
+    ports:
+      - "80:80"     
+    env_file:
+      - ./.env
+    image: diego/nginx
+    volumes:
+      - ./logs:/root/logs      
+    networks:
+      netmegacrossovernginx:
+        ipv4_address: ${IP}
+networks:
+  netmegacrossovernginx:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: ${SUBNET}

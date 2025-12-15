@@ -5,14 +5,12 @@ services:
       dockerfile: ./dockerfiles/node/dockerfile
     container_name: ${NOMBRE}
     ports:
-      - "80:80"   
-      - "443:443"  
+      - "6969:80"    
     env_file:
       - ./.env
     image: diego/nodejs
     volumes:
       - ./logs:/root/logs      
-      - ../pproyecto:/root/admin/node/proyecto/pproyecto
     networks:
       netmegacrossovernode:
         ipv4_address: ${IP}

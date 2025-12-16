@@ -1,5 +1,5 @@
 # Usamos la imagen ubbase como base
-FROM ubbase
+FROM diego/ubbase
 
 # Instalamos herramientas de seguridad
 RUN apt update && apt install -yq --no-install-recommends \

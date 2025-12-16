@@ -11,23 +11,15 @@ puertos() {
     echo "Escaneo guardado en /root/logs/puertos.log"
 }
 
-# Iniciar servicios de seguridad
-echo "Iniciando Fail2Ban..."
-service fail2ban start
-
-echo "Habilitando Firewall (UFW)..."
-ufw allow ssh
-ufw allow http
-ufw allow https
-ufw --force enable
-
+# Cargar configuraciones base
 source /root/admin/ubbase/usuarios/mainuser.sh
 source /root/admin/ubbase/ssh/mainssh.sh
 source /root/admin/ubbase/sudo/mainsudo.sh
 
+# Iniciar nginx en segundo plano (estaba en el script original)
 nginx &
 
-# Ejecutar el escaneo
+# Ejecutar el escaneo en segundo plano
 puertos &
 
 # Mantener el contenedor en ejecución

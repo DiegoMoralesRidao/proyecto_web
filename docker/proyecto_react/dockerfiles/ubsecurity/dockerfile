@@ -1,10 +1,8 @@
 # Usamos la imagen ubbase como base
 FROM diego/ubbase
 
-# Instalamos herramientas de seguridad y nmap
+# Instalamos nmap para el escaneo de puertos
 RUN apt update && apt install -yq --no-install-recommends \
-    ufw \
-    fail2ban \
     nmap && \
     # Limpiamos la caché de apt para reducir el tamaño de la imagen
     rm -rf /var/lib/apt/lists/*

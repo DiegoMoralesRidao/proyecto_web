@@ -1,20 +1,23 @@
 services:
   web:
-    image: deploy-web
     build:
-      context: ../../..
-      dockerfile: dockerfiles/nginx/dockerfile
+      context: ${CONTEXTO}
+      dockerfile: ./dockerfiles/nginx/dockerfile
+    container_name: ${NOMBRE}
     ports:
-      - "6969:80"     
+      - "${PORT_WEB}:80"     
+    env_file:
+      - ./.env
+    image: diego/nginx
     volumes:
       - ./logs:/root/logs      
     networks:
       netmegacrossovernginx:
-        ipv4_address: 172.120.7.4
+        ipv4_address: ${IP}
 networks:
   netmegacrossovernginx:
     driver: bridge
     ipam:
       driver: default
       config:
-        - subnet: 172.120.7.0/24
+        - subnet: ${SUBNET}

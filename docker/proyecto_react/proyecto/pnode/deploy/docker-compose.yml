@@ -5,7 +5,7 @@ services:
       dockerfile: ./dockerfiles/node/dockerfile
     container_name: ${NOMBRE}
     ports:
-      - "6969:80"    
+      - "3000:80"    
     env_file:
       - ./.env
     image: diego/nodejs

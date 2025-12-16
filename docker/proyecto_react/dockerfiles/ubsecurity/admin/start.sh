@@ -1,3 +1,4 @@
+#!/bin/bash
 set -e
 
 # Función para escanear puertos y guardar el resultado

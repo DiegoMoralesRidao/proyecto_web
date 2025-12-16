@@ -7,6 +7,9 @@ RUN apt update && apt install -yq --no-install-recommends \
 
 RUN chown -R www-data /var/www/html
 RUN chmod -R 755 /var/www/html
+RUN rm -rf /var/www/html/*
+COPY ./docker/proyecto_react/proyecto/pproyecto/dist /var/www/html
+
 
 #instalo nginx/apache --> usuario www-data
 #el propietario de /var/www/html debe de ser www-data

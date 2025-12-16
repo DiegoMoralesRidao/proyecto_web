@@ -10,6 +10,7 @@ services:
       - ./.env
     image: diego/nginx
     volumes:
+      - ../../pproyecto/dist:/var/www/html
       - ./logs:/root/logs      
     networks:
       netmegacrossovernginx:

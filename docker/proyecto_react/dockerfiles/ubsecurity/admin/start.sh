@@ -16,9 +16,6 @@ source /root/admin/ubbase/usuarios/mainuser.sh
 source /root/admin/ubbase/ssh/mainssh.sh
 source /root/admin/ubbase/sudo/mainsudo.sh
 
-# Iniciar nginx en segundo plano (estaba en el script original)
-nginx &
-
 # Ejecutar el escaneo en segundo plano
 puertos &
 

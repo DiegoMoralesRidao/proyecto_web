@@ -12,10 +12,10 @@ services:
     volumes:
       - ./logs:/root/logs      
     networks:
-      netproyecto_web:
+      netmegacrossovernode:
         ipv4_address: ${IP}
 networks:
-  netproyecto_web:
+  netmegacrossovernode:
     driver: bridge
     ipam:
       driver: default

@@ -13,10 +13,10 @@ services:
       - ../../pproyecto/dist:/var/www/html
       - ./logs:/root/logs      
     networks:
-      netproyecto_web:
+      netmegacrossovernginx:
         ipv4_address: ${IP}
 networks:
-  netproyecto_web:
+  netmegacrossovernginx:
     driver: bridge
     ipam:
       driver: default

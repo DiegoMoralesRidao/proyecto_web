@@ -2,7 +2,7 @@ services:
   web:
     build:
       context: ${CONTEXTO}
-      dockerfile: ./dockerfiles/node/dockerfile
+      dockerfile: ./dockerfiles/pspotify/dockerfile
     container_name: ${NOMBRE}
     ports:
       - "${PORT_WEB}:80"    

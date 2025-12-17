@@ -5,7 +5,7 @@ set -e
 workdir(){
     cd /root/admin/node/proyecto/pproyecto
 }
-construir/copiar(){
+construir_copiar(){
     npm install
     npm run build
     cp -r dist/* /var/www/html/
@@ -15,7 +15,7 @@ config_nginx(){
 }
 main(){
     workdir
-    construir/copiar
+    construir_copiar
     config_nginx
 }
 

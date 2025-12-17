@@ -1,6 +1,8 @@
 FROM diego/nodejs
-RUN  apt-get install && updateapt &&\
-   npm
+RUN apt-get update && \
+    apt-get install -yq --no-install-recommends curl && \
+    curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -yq nodejs
 RUN mkdir -p /root/admin/pspotify
 WORKDIR /root/admin/pspotify
 

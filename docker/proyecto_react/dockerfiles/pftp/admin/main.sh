@@ -28,7 +28,15 @@ echo "Iniciando servidor Pure-FTPd..."
 # Para simplicidad en este ejemplo, usamos autenticación base unix o virtual simplificada
 # En producción usaríamos base de datos de usuarios virtuales.
 # Aquí lanzamos el demonio simple apuntando al home
-pure-ftpd -c 50 -C 10 -l unix -E -j -R -P $1 &
+# Definir opciones base
+OPTIONS="-c 50 -C 10 -l unix -E -j -R"
+
+# Si se pasa un argumento (IP Pública), agregarlo a las opciones
+if [ -n "$1" ]; then
+    OPTIONS="$OPTIONS -P $1"
+fi
+
+pure-ftpd $OPTIONS &
 
 # Mantener el contenedor activo
 tail -f /dev/null

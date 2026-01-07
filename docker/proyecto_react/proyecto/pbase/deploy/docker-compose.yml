@@ -10,12 +10,13 @@ services:
     env_file:
       - ./.env
     volumes:
-      - ./logs:/root/logs 
+      - ./logs:/root/logs
     networks:
       netproyecto_web:
         ipv4_address: ${IP_WEB}
 networks:
   netproyecto_web:
+    name: netproyecto_web
     driver: bridge
     ipam:
       driver: default

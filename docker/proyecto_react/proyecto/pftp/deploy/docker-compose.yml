@@ -19,12 +19,12 @@ services:
       - ftp_data:/home/ftpusers
     restart: unless-stopped
     networks:
-      netproyecto_web:
+      netproyecto_ftp:
         ipv4_address: ${IP_PFTP}
 
 networks:
-  netproyecto_web:
-    name: netproyecto_web
+  netproyecto_ftp:
+    name: netproyecto_ftp
     driver: bridge
     ipam:
       driver: default

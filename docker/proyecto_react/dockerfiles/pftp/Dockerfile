@@ -16,7 +16,7 @@ RUN mkdir -p /root/admin/pftp
 WORKDIR /root/admin/pftp
 
 # Copiar el script main.sh
-COPY ./dockerfiles/pftp/admin/main.sh .
+COPY admin/main.sh .
 RUN chmod +x main.sh
 
 # Directorio para archivos FTP

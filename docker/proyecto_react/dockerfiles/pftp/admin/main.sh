@@ -29,10 +29,17 @@ echo "Iniciando servidor Pure-FTPd..."
 # En producción usaríamos base de datos de usuarios virtuales.
 # Aquí lanzamos el demonio simple apuntando al home
 # Definir opciones base
-OPTIONS="-c 50 -C 10 -l unix -E -j -R"
+# Configurar rango de puertos pasivos
+PASV_MIN=${PASV_MIN_PORT:-30000}
+PASV_MAX=${PASV_MAX_PORT:-30009}
 
-# Si se pasa un argumento (IP Pública), agregarlo a las opciones
-if [ -n "$1" ]; then
+OPTIONS="-c 50 -C 10 -l unix -E -j -R -p $PASV_MIN:$PASV_MAX"
+
+# Si se define FTP_PUBLIC_IP en entorno, usarla
+if [ -n "$FTP_PUBLIC_IP" ]; then
+    OPTIONS="$OPTIONS -P $FTP_PUBLIC_IP"
+elif [ -n "$1" ]; then
+    # Fallback al primer argumento si se pasa
     OPTIONS="$OPTIONS -P $1"
 fi
 

@@ -15,6 +15,9 @@ services:
       - FTP_USER=${FTP_USER}
       - FTP_PASS=${FTP_PASS}
       - GUI_PORT=${GUI_PORT}
+      - PASV_MIN_PORT=${PASV_MIN_PORT}
+      - PASV_MAX_PORT=${PASV_MAX_PORT}
+      - FTP_PUBLIC_IP=${FTP_PUBLIC_IP}
     volumes:
       - ftp_data:/home/ftpusers
     restart: unless-stopped

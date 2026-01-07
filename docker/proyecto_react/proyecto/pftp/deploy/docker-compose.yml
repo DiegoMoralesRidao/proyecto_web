@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  pftp:
+    build:
+      context: ../../../dockerfiles/pftp
+      dockerfile: Dockerfile
+    image: diego/pftp
+    container_name: pftp
+    ports:
+      - "${FTP_PORT}:21"
+      - "${GUI_PORT}:8080"
+      - "${PASV_MIN_PORT}-${PASV_MAX_PORT}:${PASV_MIN_PORT}-${PASV_MAX_PORT}"
+    environment:
+      - FTP_USER=${FTP_USER}
+      - FTP_PASS=${FTP_PASS}
+      - GUI_PORT=${GUI_PORT}
+    volumes:
+      - ftp_data:/home/ftpusers
+    restart: unless-stopped
+    networks:
+      netproyecto_web:
+        ipv4_address: ${IP_PFTP}
+
+networks:
+  netproyecto_web:
+    external: true
+
+volumes:
+  ftp_data:

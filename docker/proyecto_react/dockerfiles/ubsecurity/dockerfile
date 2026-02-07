@@ -1,5 +1,5 @@
 # Usamos la imagen ubbase como base
-FROM diego/ubbase
+FROM dmorrid/ubbase
 
 # Instalamos nmap para el escaneo de puertos
 RUN apt update && apt install -yq --no-install-recommends \

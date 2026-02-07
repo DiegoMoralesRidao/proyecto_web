@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webspotify
+  namespace: pspotify
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: webspotify
+  template:
+    metadata:
+      labels:
+        app: webspotify
+    spec:
+      containers:
+      - name: webspotify
+        image: dmorid/webspotify
+        ports:
+        - containerPort: 80

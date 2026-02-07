@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: webspotify
-        image: dmorrid/webspotify
+        image: dmorrid/spotify
         ports:
         - containerPort: 80

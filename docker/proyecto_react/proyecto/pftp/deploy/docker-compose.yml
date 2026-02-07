@@ -3,13 +3,13 @@ version: '3.8'
 services:
   pftp:
     build:
-      context: ../../../dockerfiles/pftp
+      context: ./dockerfiles/pftp/dockerfile
       dockerfile: Dockerfile
     image: dmorrid/pftp
     container_name: pftp
     ports:
       - "${FTP_PORT}:21"
-      - "${GUI_PORT}:8080"
+      - "${GUI_PORT}:8000"
       - "${PASV_MIN_PORT}-${PASV_MAX_PORT}:${PASV_MIN_PORT}-${PASV_MAX_PORT}"
     environment:
       - FTP_USER=${FTP_USER}

@@ -1,5 +1,5 @@
 # Usamos la imagen ubsecurity como base (asumiendo que pbusecurity se refiere a esta o su alias)
-FROM diego/ubsecurity
+FROM dmorrid/ubsecurity
 
 # Instalar Pure-FTPd y curl (para bajar filebrowser)
 RUN apt-get update && apt-get install -yq --no-install-recommends \

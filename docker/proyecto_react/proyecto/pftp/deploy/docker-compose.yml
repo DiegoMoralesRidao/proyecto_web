@@ -5,7 +5,7 @@ services:
     build:
       context: ../../../dockerfiles/pftp
       dockerfile: Dockerfile
-    image: diego/pftp
+    image: dmorrid/pftp
     container_name: pftp
     ports:
       - "${FTP_PORT}:21"

@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: spotify-ingress
+  namespace: pspotify
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: www.diegomoralesridao.es
+  http:
+    paths:
+    - path: /
+    pathType: Prefix
+    backend:
+      service:
+        name: pspotify-service
+        port:
+          number: 80

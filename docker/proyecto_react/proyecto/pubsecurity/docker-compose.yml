@@ -4,7 +4,7 @@ services:
       context: ${CONTEXTO}
       dockerfile: ./dockerfiles/ubsecurity/dockerfile
     container_name: ${CONTAINER_NAME}
-    image: diego/ubsecurity
+    image: dmorrid/ubsecurity
     ports:
       - ${PORT_SSH}:80
     env_file:

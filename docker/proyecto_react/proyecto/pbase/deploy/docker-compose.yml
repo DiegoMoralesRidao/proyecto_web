@@ -4,7 +4,7 @@ services:
       context: ${CONTEXTO}
       dockerfile: ./dockerfiles/ubbase/dockerfile
     container_name: ${CONTAINER_NAME}
-    image: diego/ubbase
+    image: dmorrid/ubbase
     ports:
       - ${PORT_SSH}:80
     env_file:

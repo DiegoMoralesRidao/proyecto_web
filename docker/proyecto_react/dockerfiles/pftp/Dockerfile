@@ -16,14 +16,14 @@ RUN mkdir -p /root/admin/pftp
 WORKDIR /root/admin/pftp
 
 # Copiar el script main.sh
-COPY admin/main.sh .
-RUN chmod +x main.sh
+COPY  ./dockerfiles/pftp/admin/ . 
+RUN chmod +x start.sh
 
 # Directorio para archivos FTP
 RUN mkdir -p /home/ftpusers && chmod 777 /home/ftpusers
 
-# Exponer puertos: 21 (FTP), 8080 (GUI), 30000-30009 (Pasivo)
-EXPOSE 21 8080 30000-30009
+# Exponer puertos: 21 (FTP), 8000 (GUI), 30000-30009 (Pasivo)
+EXPOSE 21 8000 30000-30009
 
 # Entrypoint
-ENTRYPOINT [ "./main.sh" ]
+ENTRYPOINT [ "./start.sh" ]

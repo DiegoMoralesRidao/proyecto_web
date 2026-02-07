@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+source /root/admin/pftp/admin/mainsudo.sh
+
 echo "Iniciando configuración de Pure-FTPd..."
 
 # Crear el usuario virtual en la base de datos de Pure-FTPd

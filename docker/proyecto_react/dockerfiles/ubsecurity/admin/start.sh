@@ -20,4 +20,4 @@ source /root/admin/ubbase/sudo/mainsudo.sh
 puertos &
 
 # Mantener el contenedor en ejecución
-tail -f /dev/null
+#tail -f /dev/null

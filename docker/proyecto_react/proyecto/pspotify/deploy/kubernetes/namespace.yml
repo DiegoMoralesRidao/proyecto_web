@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: pspotify
   labels:
-    app: pspotify
+    name: pspotify

@@ -3,7 +3,7 @@ services:
     build:
       context: ${CONTEXTO}
       dockerfile: ./dockerfiles/node/dockerfile
-    container_name: ${NOMBRE}
+    container_name: ctspotify
     ports:
       - "${PORT_WEB}:80"    
     env_file:

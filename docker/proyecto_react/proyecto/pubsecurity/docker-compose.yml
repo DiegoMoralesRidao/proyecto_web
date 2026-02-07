@@ -1,9 +1,9 @@
 services:
   web:
     build:
-      context: ${CONTEXTO}
+      context: /home/diego/proyecto_web/docker/proyecto_react/
       dockerfile: ./dockerfiles/ubsecurity/dockerfile
-    container_name: ${CONTAINER_NAME}
+    container_name: ctspotify
     image: dmorrid/ubsecurity
     ports:
       - ${PORT_SSH}:80

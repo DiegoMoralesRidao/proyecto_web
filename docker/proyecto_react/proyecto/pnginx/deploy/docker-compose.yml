@@ -1,9 +1,9 @@
 services:
   web:
     build:
-      context: ${CONTEXTO}
+      context: /home/diego/proyecto_web/docker/proyecto_react/
       dockerfile: ./dockerfiles/nginx/dockerfile
-    container_name: ${NOMBRE}
+    container_name: ctspotify
     ports:
       - "${PORT_WEB}:80"     
     env_file:

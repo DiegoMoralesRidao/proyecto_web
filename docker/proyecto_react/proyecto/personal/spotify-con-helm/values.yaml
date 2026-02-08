@@ -1,0 +1,15 @@
+app:
+  name: spotify
+  image: 
+    repository: dmorrid/spotify
+    tag: latest
+    pullPolicy: Always
+  container:
+    name: spotify
+    port: 80
+    replicaCount: 3
+  service:
+    port: 80
+    nodePort: 30090
+  ingress:
+    host: proyecto.diegomoralesridao.es

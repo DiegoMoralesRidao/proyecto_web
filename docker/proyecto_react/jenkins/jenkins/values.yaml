@@ -3,14 +3,14 @@ controller:
       repository: jenkins/jenkins
       tag: "2.541.1-lts-jdk21"
   runAsUser: 1000
-  fsGroup: 1000
+  fsGroup: 1000ñp
   admin:
     username: admin
     password: admin123
   persistence:
     enabled: true
     size: 8Gi
-    storageClass: microk8s-hostpath   # 👈 clave
+    storageClass: microk8s-hostpath
   serviceType: ClusterIP
   sidecars:
     configAutoReload:
@@ -21,14 +21,14 @@ controller:
   ingress:
     enabled: true
     ingressClassName: nginx
-    hostName: jenkins.jamorgado.es
+    hostName: jenkins.diegomoralesridao.es
     annotations:
       cert-manager.io/cluster-issuer: letsencrypt-prod
       nginx.ingress.kubernetes.io/ssl-redirect: "true"
     tls:
       - secretName: jenkins-tls
         hosts:
-          - jenkins.jamorgado.es
+          - jenkins.diegomoralesridao.es
   additionalPlugins: []
   installPlugins:
     - configuration-as-code

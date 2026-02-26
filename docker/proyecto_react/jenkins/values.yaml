@@ -11,7 +11,7 @@ controller:
   persistence:
     enabled: true
     size: 8Gi
-    storageClass: microk8s-hostpath   # 👈 clave
+    storageClass: microk8s-hostpath   
   serviceType: ClusterIP
   sidecars:
     configAutoReload:
